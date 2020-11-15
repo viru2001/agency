@@ -6,7 +6,7 @@
 <html class="wide wow-animation" lang="en"> 
   <head>
     <!-- Site Title-->
-    <title>Contacts</title>
+    <title>Tours</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -120,9 +120,9 @@
                     </li>
                     <li ><a href="about-us.php">About Us</a>
                     </li>
-                    <li class="active"><a href="contacts.php">Contacts</a>
+                    <li ><a href="contacts.php">Contacts</a>
                     </li>
-                    <li><a href="tours.php">Tours</a>
+                    <li class="active"><a href="tour.php">Tours</a>
                     </li>
 
                     <?php
@@ -140,62 +140,140 @@
         <!-- Breadcrumbs-->
         <section class="breadcrumbs-custom" style="background: url(&quot;images/breadcrumbs-bg.jpg&quot;); background-size: cover;">
           <div class="container">
-            <p class="breadcrumbs-custom-subtitle">Who We Are</p>
-            <p class="heading-1 breadcrumbs-custom-title">About Us</p>
+            <p class="breadcrumbs-custom-subtitle"></p>
+            <p class="heading-1 breadcrumbs-custom-title">OUR TOURS</p>
             <ul class="breadcrumbs-custom-path">
               <li><a href="index.html">Home</a></li>
-              <li class="active">About Us</li>
+              <li class="active">Tours</li>
             </ul>
           </div>
         </section>
       </header>
-      <!-- Contact info-->
-      <section class="section section-lg bg-default text-center">
+
+
+
+
+      <section class="section section-variant-1 bg-default novi-background bg-cover"> 
         <div class="container container-wide">
-          <div class="row row-fix row-50 row-custom-bordered">
-            <div class="col-sm-6 col-lg-3">
-              <!-- Box minimal-->
-              <article class="box-simple">
-                <div class="box-simple-icon novi-icon mdi mdi-map-marker"></div>
-                <h6>Address</h6>
-                <div class="box-simple-text"><a href="#">2130 Fulton Street, Chicago, IL <br> 94117-1080 USA</a></div>
-              </article>
+          <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
+            <div class="col-xl-8">
+              <div class="parallax-text-wrap">
+                <h3>Our Tours</h3>
+                <!-- <span class="parallax-text">Hot tours</span> -->
+              </div>
+              <hr class="divider divider-decorate">
             </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Box simple-->
-              <article class="box-simple">
-                <div class="box-simple-icon novi-icon mdi mdi-phone"></div>
-                <h6>phones</h6>
-                <div class="box-simple-text">
-                  <ul class="list-comma list-0">
-                    <li><a href="tel:#">1-800-6543-765</a></li>
-                    <li><a href="tel:#">1-800-3434-876</a></li>
-                  </ul>
+            <div class="col-xl-3 text-xl-right">
+              <!-- <a class="button button-secondary button-nina" href="tours.php">view all tours</a> -->
+            </div>
+          </div>
+          <div class="row row-50">
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-01-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="tourInfo1.php">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">France, Paris</a></h5><span class="heading-5">from $280</span>
                 </div>
               </article>
             </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Box simple-->
-              <article class="box-simple">
-                <div class="box-simple-icon novi-icon mdi mdi-email-open"></div>
-                <h6>e-mail</h6>
-                <div class="box-simple-text">
-                  <ul class="list-comma list-0">
-                    <li><a href="mailto:#">mail@demolink.org</a></li>
-                  </ul>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-02-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">USA, Boston</a></h5><span class="heading-5">from $480</span>
                 </div>
               </article>
             </div>
-            <div class="col-sm-6 col-lg-3">
-              <!-- Box simple-->
-              <article class="box-simple">
-                <div class="box-simple-icon novi-icon mdi mdi-calendar-clock"></div>
-                <h6>opening hours</h6>
-                <div class="box-simple-text">
-                  <ul class="list-0">
-                    <li>Mon–Fri: 9:00 am–6:00 pm</li>
-                    <li>Sat–Sun: 11:00 am–4:00 pm</li>
-                  </ul>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-03-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">Italy, Venice</a></h5><span class="heading-5">from $350</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-04-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">Spain, Benidorm</a></h5><span class="heading-5">from $350</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-05-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">Egypt,  Sharm El Sheikh</a></h5><span class="heading-5">from $520</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-06-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">UK, London</a></h5><span class="heading-5">from $600</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-04-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">Spain, Benidorm</a></h5><span class="heading-5">from $350</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-05-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">Egypt,  Sharm El Sheikh</a></h5><span class="heading-5">from $520</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/landing-private-airlines-06-570x370.jpg" alt="" width="570" height="370"/>
+                  </figure>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#">UK, London</a></h5><span class="heading-5">from $600</span>
                 </div>
               </article>
             </div>
@@ -203,71 +281,13 @@
         </div>
       </section>
 
-      <!-- Contact us-->
-      <section class="section section-wrap bg-gray-lighter novi-background bg-cover">
-        <div class="section-wrap-inner">
-          <div class="container container-bigger">
-            <div class="row row-fix row-50">
-              <div class="col-lg-8 col-xl-7">
-                <div class="section-wrap-content section-lg">
-                  <h3>Contact us</h3>
-                  <hr class="divider divider-left divider-secondary">
-                  <p class="big">You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.</p>
-                  <!-- RD Mailform-->
-                  <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="row row-fix row-20">
-                      <div class="col-md-6">
-                        <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-name">First name</label>
-                          <input class="form-input" id="form-1-name" type="text" name="name" data-constraints="@Required"/>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-last-name">Last name</label>
-                          <input class="form-input" id="form-1-last-name" type="text" name="last-name" data-constraints="@Required"/>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-email">E-mail</label>
-                          <input class="form-input" id="form-1-email" type="email" name="email" data-constraints="@Email @Required"/>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-phone">Phone</label>
-                          <input class="form-input" id="form-1-phone" type="text" name="phone" data-constraints="@Numeric @Required"/>
-                        </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-message">Message</label>
-                          <textarea class="form-input" id="form-1-message" name="message" data-constraints="@Required"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 offset-custom-1">
-                        <div class="form-button">
-                          <button class="button button-secondary button-nina" type="submit">send message</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-wrap-aside">
-            <!-- RD Google Map-->
-            <div class="google-map-container google-map-with-icon rd-google-map__model" data-zoom="5" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png" data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:60}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:30}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ef8c25&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b6c54c&quot;},{&quot;lightness&quot;:40},{&quot;saturation&quot;:-40}]},{}]">
-              <div class="google-map"></div>
-              <ul class="google-map-markers">
-                <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
+
+
+
+
+
 <!-- <a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a> -->
       <!-- Page Footer-->
       <!-- Footer Minimal-->

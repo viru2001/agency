@@ -1,0 +1,10 @@
+body, select {
+  font-family: "Source Sans Pro", Calibri, sans-serif;
+  font-size: 16px;
+  color: #414042;
+}
+.ug-gallery-wrapper.ug-theme-default {
+  min-width: 310px !important;
+}
+
+

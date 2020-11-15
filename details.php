@@ -19,13 +19,36 @@
 		<![endif]--> 
   </head>
 <body>
+
+
+<?php
+
+
+    include 'connector.php';
+    if(isset($_POST['submit1'])){
+        // echo "Done";
+        echo "done";
+        // header('location : index.php');
+
+    
+
+?>
+    <script>
+        alert("booked Successful !!!");
+        // location.replace("index.php");
+    </script>
+<?php 
+    }
+
+?>
+        
     <div class="container container-bigger form-request-wrap form-request-wrap-modern">
                 <div class="row row-fix justify-content-md-center ">
                 <div class="col-lg-6 col-xxl-5">
                     <div class="form-request form-request-modern bg-gray-lighter novi-background">
                     <h4>Book Your Tour</h4>
                     <!-- RD Mailform-->
-                    <form class="rd-mailform form-fix">
+                    <form class="form-fix"  action="payment.php" method="POST">
                         <div class="row row-20 row-fix">
                         <div class="col-sm-12">
                             <label class="form-label-outside">From</label>
@@ -97,7 +120,12 @@
                         </div>
                         </div>
                         <div class="form-wrap form-button">
-                        <button class="button button-block button-secondary" type="submit">BOOK TOUR</button>
+                        <!-- <button class="button button-block button-secondary" name="submit1" type="submit">BOOK TOUR</button> -->
+                        <button type="submit" name="submit1" class="button button-block button-secondary">BOOK TOUR</button>
+                        <!-- <a class="" href="payment.php">
+                                <input type="submit"/>
+                                <input class="button button-block button-secondary"  name="submit1" type="submit">BOOK TOUR</input>
+                        </a> -->
                         </div>
                     </form>
                     </div>
@@ -108,6 +136,8 @@
 
 
     <script src="js/core.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="js/script.js"></script>
+    
 </body>
 </html>

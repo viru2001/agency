@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
-    <link rel="stylesheet" href="css1/signup.css">
+    <link rel="stylesheet" href="css1/signup1.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -95,8 +95,8 @@
     <div class="form-modal">
     
         <div class="form-toggle">
-            <button id="login-toggle" onclick="toggleLogin()">log in</button>
-            <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+            <button id="login-toggle" onclick="toggleLogin()" >log in</button>
+            <button id="signup-toggle" onclick="toggleSignup()" >sign up</button>
         </div>
     
         <div id="login-form">
@@ -104,7 +104,7 @@
                 <input type="text" name="loginEmail" placeholder="Enter email "/>
                 <input type="password" name="loginPassword" placeholder="Enter password"/>
                 <button type="submit" name="loginSubmit" class="btn login">login</button>
-                <p><a href="javascript:void(0)">Forgotten account</a></p>
+                <!-- <p><a href="javascript:void(0)">Forgotten account</a></p> -->
                 <hr/>
                 <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> sign in with google</button>
                 <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> sign in with linkedin</button>
@@ -205,7 +205,7 @@
                 <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> sign up with microsoft</button>
             </form>
         </div>
-        <script src="js1/signup.js"></script>
+        <script src="js1/signup1.js"></script>
     
     </div>
     

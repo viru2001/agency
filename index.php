@@ -79,7 +79,8 @@
       </div>
     </div>
     <!-- Page-->
-    <div class="page"><a class="section section-banner text-center d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-04-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/background-04-1920x60.jpg) 1x, url(images/banner/background-04-3840x120.jpg) 2x )"><img src="images/banner/foreground-04-1600x60.png" srcset="images/banner/foreground-04-1600x60.png 1x, images/banner/foreground-04-3200x120.png 2x" alt="" width="1600" height="310"></a>
+    <div class="page">
+      
       <!-- Page Header-->
       <header class="section page-header">
         <!-- RD Navbar-->
@@ -106,7 +107,14 @@
                   <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-linkedin" href="#"></a></li>
                 </ul>
               </div>
-              <div class="rd-navbar-top-panel-inner"><a class="button button-sm button-secondary button-nina" href="https://www.templatemonster.com/website-templates/62466.html" target="_blank">buy template now</a></div>
+              <div class="rd-navbar-top-panel-inner">
+                <!-- <a class="button button-sm button-secondary button-nina" 
+                href="https://www.templatemonster.com/website-templates/62466.html" target="_blank">
+                buy template now</a> -->
+                <!-- <div class="rd-navbar-aside-right"> -->
+                  <a class="button button-sm button-secondary button-nina" href="logout.php">LOGOUT</a>
+                <!-- </div> -->
+              </div>
             </div>
             <div class="rd-navbar-inner">
               <!-- RD Navbar Panel-->
@@ -114,7 +122,7 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo-default-208x46.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
+                <div class="rd-navbar-brand"><a class="brand-name" href="index.php"><img class="logo-default" src="images/logo-default-208x46.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
               </div>
               <div class="rd-navbar-aside-center">
                 <div class="rd-navbar-nav-wrap">
@@ -126,19 +134,22 @@
                     </li>
                     <li><a href="contacts.php">Contacts</a>
                     </li>
-                    <li><a href="typography.html">Typography</a>
+                    <li><a href="tours.php">Tours</a>
                     </li>
+
+                    <?php
+                  echo "<li><h5>&nbsp;&nbsp;&nbsp; Welcome, {$_SESSION['username']}</h5></li>";
+                    ?>  
                   </ul>
+                  
                 </div>
+                
               </div>
               <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="logout.php">LOGOUT</a></div>
             </div>
           </nav>
         </div>
       </header>
-      <?php
-        echo $_SESSION['username'];
-      ?>
       <section class="section">
         <div class="swiper-form-wrap">
           <!-- Swiper-->
@@ -195,80 +206,7 @@
               </div>
             </div>
           </div>
-          <div class="container container-bigger form-request-wrap form-request-wrap-modern">
-            <div class="row row-fix justify-content-sm-center justify-content-lg-end">
-              <div class="col-lg-6 col-xxl-5">
-                <div class="form-request form-request-modern bg-gray-lighter novi-background">
-                  <h4>Find your Tour</h4>
-                  <!-- RD Mailform-->
-                  <form class="rd-mailform form-fix">
-                    <div class="row row-20 row-fix">
-                      <div class="col-sm-12">
-                        <label class="form-label-outside">From</label>
-                        <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">New York</option>
-                            <option value="2">Lisbon</option>
-                            <option value="3">Stockholm</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-12">
-                        <label class="form-label-outside">To</label>
-                        <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">Chicago</option>
-                            <option value="2">Madrid</option>
-                            <option value="3">Paris</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-12 col-lg-6">
-                        <label class="form-label-outside">Depart Date</label>
-                        <div class="form-wrap form-wrap-validation">
-                          <!-- Select -->
-                          <input class="form-input" id="dateForm" name="date" type="text" data-time-picker="date">
-                          <label class="form-label" for="dateForm">Choose the date</label>
-                          <!--select.form-input.select-filter(data-placeholder="All", data-minimum-results-for-search="Infinity",  name='city')-->
-                          <!--  option(value="1") Choose the date-->
-                          <!--  option(value="2") Primary-->
-                          <!--  option(value="3") Middle-->
-                        </div>
-                      </div>
-                      <div class="col-sm-12 col-lg-6">
-                        <label class="form-label-outside">Duration</label>
-                        <div class="form-wrap form-wrap-validation">
-                          <!-- Select 2-->
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">Any length</option>
-                            <option value="2">2 days</option>
-                            <option value="3">3 days</option>
-                            <option value="4">4 days</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label-outside">Adults</label>
-                        <div class="form-wrap form-wrap-modern">
-                          <input class="form-input input-append" id="form-element-stepper" type="number" min="0" max="300" value="2">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label-outside">Children</label>
-                        <div class="form-wrap form-wrap-modern">
-                          <input class="form-input input-append" id="form-element-stepper-1" type="number" min="0" max="300" value="0">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit">search flight</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          
       </section>
 
       <section class="section section-variant-1 bg-default novi-background bg-cover"> 
@@ -276,11 +214,12 @@
           <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
             <div class="col-xl-8">
               <div class="parallax-text-wrap">
-                <h3>Our Best Tours</h3><span class="parallax-text">Hot tours</span>
+                <h3>Our Best Tours</h3>
+                <!-- <span class="parallax-text">Hot tours</span> -->
               </div>
               <hr class="divider divider-decorate">
             </div>
-            <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="#">view all tours</a></div>
+            <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">view all tours</a></div>
           </div>
           <div class="row row-50">
             <div class="col-md-6 col-xl-4">
@@ -288,7 +227,7 @@
                 <div class="event-default">
                   <figure class="event-default-image"><img src="images/landing-private-airlines-01-570x370.jpg" alt="" width="570" height="370"/>
                   </figure>
-                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
+                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="tourInfo1.php">learn more</a></div>
                 </div>
                 <div class="event-default-inner">
                   <h5><a class="event-default-title" href="#">France, Paris</a></h5><span class="heading-5">from $280</span>
@@ -319,42 +258,7 @@
                 </div>
               </article>
             </div>
-            <div class="col-md-6 col-xl-4">
-              <article class="event-default-wrap">
-                <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-04-570x370.jpg" alt="" width="570" height="370"/>
-                  </figure>
-                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
-                </div>
-                <div class="event-default-inner">
-                  <h5><a class="event-default-title" href="#">Spain, Benidorm</a></h5><span class="heading-5">from $350</span>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-xl-4">
-              <article class="event-default-wrap">
-                <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-05-570x370.jpg" alt="" width="570" height="370"/>
-                  </figure>
-                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
-                </div>
-                <div class="event-default-inner">
-                  <h5><a class="event-default-title" href="#">Egypt,  Sharm El Sheikh</a></h5><span class="heading-5">from $520</span>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-xl-4">
-              <article class="event-default-wrap">
-                <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-06-570x370.jpg" alt="" width="570" height="370"/>
-                  </figure>
-                  <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
-                </div>
-                <div class="event-default-inner">
-                  <h5><a class="event-default-title" href="#">UK, London</a></h5><span class="heading-5">from $600</span>
-                </div>
-              </article>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -534,7 +438,11 @@
             </div>
           </div>
         </div>
-      </section><a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
+      </section>
+      <!-- <a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" 
+      style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x,
+       url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, 
+       images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a> -->
 
       <!-- Footer Minimal-->
       <footer class="section page-footer page-footer-minimal novi-background bg-cover text-center bg-gray-darker">
