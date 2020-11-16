@@ -46,8 +46,9 @@ class PJBridge {
 		$ol = array();
 
 		foreach ($il as $value)
-			$ol[] = iconv($this->jdbc_enc, $this->app_enc, base64_decode($value));
-
+			// $ol[] = iconv($this->jdbc_enc, $this->app_enc, base64_decode($value));
+			
+			$ol[] = iconv($this->jdbc_enc, 'ASCII//TRANSLIT//IGNORE', base64_decode($value));
 		return $ol;
 	}
 

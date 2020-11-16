@@ -198,47 +198,81 @@
         <div
           class="row row-50 justify-content-md-center align-items-lg-center justify-content-xl-between flex-lg-row-reverse">
           <div class="col-md-10 col-lg-6 col-xl-5">
-            <h3>hi, we are sealine</h3>
+            <h3><?php echo "{$_SESSION['destination']}" ?></h3>
+
+
+
+            <?php
+                include 'connector.php';
+                // $name = "paris";
+                // $image = "images/landing-private-airlines-01-570x370.jpg";
+                // $price = "25000";
+
+                
+                $tourQuery = " select distinct pics,details from agency.tourInfo where destination = '{$_SESSION['destination']}' ";
+                $query = $db->exec($tourQuery);
+                
+                while($row = $db->fetch_array($query)){
+                  
+                  // print_r($row);
+                  foreach((array)$row as $x => $x_value) {
+                    if($x=="details"){
+                      $details = $x_value;
+                      
+                    }
+        
+                    else{
+                      // $pic = $x_value;
+                      $arr = explode(",",$x_value);
+                      $pic1 =$arr[0];
+                      $pic2 =$arr[1];
+                      $pic3 =$arr[2];
+                      // echo "$pic";
+                    }
+                    //  $pic = "https://theross.ml/0:/project/p4.jpg";
+                    // echo "$pic";
+                  }
+                  
+
+                  // error_reporting(0);
+
+                  
+                }
+
+                // $_SESSION['destination'] = $destination;
+
+            ?>
+
+
+
+            
             <div class="divider divider-decorate"></div>
-            <p class="heading-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-            <p class="text-spacing-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p><a
+            <p class="heading-5"><?php echo "$details "?></p>
+            <a
               class="button button-default-outline button-nina" href="details.php">BOOK TOUR</a>
           </div>
+
+          <?php
+          print'
           <div class="col-md-10 col-lg-6" id="gallery" style="display:none;">
             <!-- <img src="images/about-us-1-720x459.jpg" alt="" width="720" height="459"/> -->
-            <img alt="Preview Image 1"
-              src="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/thumbs/thumb1.jpg"
-              data-image="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/big/image1.jpg"
-              data-description="Preview Image 1 Description">
-
+            <img alt=""
+              src = " '.$pic1.' "
+              data-image="'.$pic1.'"
+             />
             <img alt="Preview Image 2"
-              src="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/thumbs/thumb2.jpg"
-              data-image="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/big/image2.jpg"
-              data-description="Preview Image 2 Description">
+              src="'.$pic2.'"
+              data-image="'.$pic2.'"
+              />
 
 
             <img alt="Preview Image 3"
-              src="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/thumbs/thumb3.jpg"
-              data-image="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/big/image3.jpg"
-              data-description="Preview Image 3 Description">
+              src="'.$pic3.'"
+              data-image="'.$pic3.'"
+              />
 
-
-            <img alt="Preview Image 4"
-              src="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/thumbs/thumb4.jpg"
-              data-image="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/big/image4.jpg"
-              data-description="Preview Image 4 Description">
-
-
-
-            <img alt="Preview Image 5"
-              src="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/thumbs/thumb1.jpg"
-              data-image="https://www.jqueryscript.net/demo/Fully-Functional-jQuery-Image-Video-Gallery-Plugin-Unite-Gallery/images/big/image1.jpg"
-              data-description="Preview Image 5 Description">
-
-          </div>
+          </div>';
+          ?>
           <script src="js1/tourinfo.js"></script>
         </div>
     </section>

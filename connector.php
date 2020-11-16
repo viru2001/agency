@@ -27,17 +27,17 @@ else{
         </script>
     <?php
 }
-$cursor = $db->exec("SELECT * FROM root.customer");
+// $cursor = $db->exec("SELECT * FROM root.customer");
 
-while($row = $db->fetch_array($cursor)){
-    // print_r($row);
-    // echo gettype($row);
-    // print_r($row);
-    // echo "$row['Customercol']";
-    // foreach($row as $x => $x_value) {
-    //       if($x=="idCustomer") echo $x_value;
-    // }
-}
+// while($row = $db->fetch_array($cursor)){
+//     // print_r($row);
+//     // echo gettype($row);
+//     // print_r($row);
+//     // echo "$row['Customercol']";
+//     // foreach($row as $x => $x_value) {
+//     //       if($x=="idCustomer") echo $x_value;
+//     // }
+// }
 
 // $age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
 

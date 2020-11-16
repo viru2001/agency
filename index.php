@@ -222,7 +222,90 @@
             <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">view all tours</a></div>
           </div>
           <div class="row row-50">
-            <div class="col-md-6 col-xl-4">
+            <?php
+                include 'connector.php';
+                // $name = "paris";
+                // $image = "images/landing-private-airlines-01-570x370.jpg";
+                // $price = "25000";
+
+
+                $tourQuery = " select distinct destination,price,pics from agency.tourInfo where type = 'best' ";
+                $query = $db->exec($tourQuery);
+
+                while($row = $db->fetch_array($query)){
+                  // print_r($row);
+                  foreach((array)$row as $x => $x_value) {
+                    if($x=="destination"){
+                      $destination = $x_value;
+                    }
+                    elseif($x == "price"){
+                        $price = $x_value;
+                    }
+                    else{
+                      // $pic = $x_value;
+                      $arr = explode(",",$x_value);
+                      $pic =$arr[0];
+                      // echo "$pic";
+                    }
+                    //  $pic = "https://theross.ml/0:/project/p4.jpg";
+                    // echo "$pic";
+                  }
+                  
+
+                  error_reporting(0);
+
+                  print '<div class="col-md-6 col-xl-4">
+                    <article class="event-default-wrap">
+                      <div class="event-default">
+                        <figure class="event-default-image"><img src="'.$pic.'" alt="" width="570" height="370"/>
+                        </figure>
+                        <div class="event-default-caption"><a onclick="getDestination()" id="'.$destination.'"  class="button button-xs button-secondary button-nina" href="tourInfo1.php">learn more</a ></div>
+                      </div>
+                      <div class="event-default-inner">
+                        <h5 class="event-default-title"> ' . $destination . ' </h5>
+                        <span class="heading-5">₹' .$price . '</span>
+                      </div>
+                    </article>
+                  </div>';
+                }
+
+                // $_SESSION['destination'] = $destination;
+
+            ?>
+            <script>
+              // jQuery(document).ready(function(){ 
+              //   jQuery.post("index.php", {"destination": ""}); 
+			        // }); 
+              
+              function getDestination(){
+                  // alert("called");
+                  // var name = document.getElementsByTagName('a')[0].id;
+                  // document.cookie="destination=name";
+
+                  $(document).on('click', 'a', function () {
+                    // var destination = this.id;
+                    // alert(this.id);
+                    $.post("index.php", {"destination": this.id});
+                  });
+                }
+
+            </script>
+
+            <?php
+                // $_SESSION['destination'] = "";
+                // $_POST['destination'] = "";
+
+                  $_SESSION['destination']  = $_POST['destination'];
+            ?>
+
+<!-- <script>
+                $(document).on('click', 'a', function () {
+                      alert(this.id);
+                  });
+            </script>
+            <a id="hii" href="#">test</a> -->
+            
+            <!-- <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
                   <figure class="event-default-image"><img src="images/landing-private-airlines-01-570x370.jpg" alt="" width="570" height="370"/>
@@ -257,7 +340,7 @@
                   <h5><a class="event-default-title" href="#">Italy, Venice</a></h5><span class="heading-5">from $350</span>
                 </div>
               </article>
-            </div>
+            </div> -->
             
           </div>
         </div>
