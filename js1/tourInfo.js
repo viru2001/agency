@@ -1,3 +1,3 @@
-jQuery(document).ready(function(){
-  jQuery("#gallery").unitegallery();
+x(document).ready(function(){
+  x("#gallery").unitegallery();
 });
