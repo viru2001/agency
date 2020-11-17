@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://theross.ml/0:/agency/logo.jpg" type="image/x-icon">
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -24,7 +24,30 @@
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"> </script>
-		<![endif]--> 
+    <![endif]--> 
+    <style>
+        @media (min-width: 576px) {
+              #logo img{
+                width: 80;
+                height: 20;
+              }
+         }
+
+
+        @media (min-width: 768px) { 
+
+         }
+
+
+        @media (min-width: 992px) { 
+
+         }
+
+
+        @media (min-width: 1200px) { 
+
+         } 
+    </style>
   </head>
   <body>
     <!-- Page preloader-->
@@ -122,7 +145,7 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.php"><img class="logo-default" src="images/logo-default-208x46.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
+                <div class="rd-navbar-brand"><a  class="brand-name" href="index.php"><img id="logo" class="logo-default" src="https://theross.ml/0:/agency/logo.jpg" alt="" width="100" height="30"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
               </div>
               <div class="rd-navbar-aside-center">
                 <div class="rd-navbar-nav-wrap">
@@ -516,7 +539,7 @@
                   <h3 class="box-cta-title">Buy a tour without leaving your home</h3>
                   <p>Using our website, you can book any tour just in a couple of clicks.</p>
                 </div>
-                <div class="box-cta-inner"><a class="button button-secondary button-nina" href="#">Book Now</a></div>
+                <div class="box-cta-inner"><a class="button button-secondary button-nina" href="tours.php">Book Now</a></div>
               </div>
             </div>
           </div>

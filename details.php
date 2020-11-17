@@ -24,22 +24,9 @@
   </head>
 <body>
 
-
-<?php
-
-
-    include 'connector.php';
-    if(isset($_POST['submit1'])){
-        // echo "Done";
-        echo "done";
-        // header('location : index.php');
-
-    }
-
-?>
 <?php  
     
-    
+    include 'connector.php';
     $tourQuery = " select source,price,availableSeats,dates,duration,departure from agency.tourInfo where destination = '{$_SESSION['destination']}' ";
     $query = $db->exec($tourQuery);
     $sources = array();
@@ -74,13 +61,77 @@
 
     }
 
-    print_r($sources);
-    print_r($prices);
-    print_r($availableSeats);
-    print_r($dates);
-    print_r($duration);
-    print_r($departure);
+    // print_r($sources);
+    // print_r($prices);
+    // print_r($availableSeats);
+    // print_r($dates);
+    // print_r($duration);
+    // print_r($departure);
 ?>
+<?php
+
+
+    
+    // print_r($sources);
+    if(isset($_POST['submit1'])){
+        // echo "Done";
+        // echo "done";
+        ?>
+                        <script>
+                            // alert("login Successful !!!");
+                            location.replace("payment.php");
+                        </script>
+                    <?php
+                // echo "$sources";
+
+                $from =$sources[(int)$_POST['from']];
+                $destination1 = $_SESSION['destination'];
+
+                $finalDates =explode(",", $dates[(int) $_POST['from'] ]);
+
+                $date = $finalDates[(int)$_POST['date']];
+
+                $_SESSION['date'] = $date;
+
+                $finalTime =explode(",", $departure[(int) $_POST['from'] ]);
+
+                $time =$finalTime[(int)$_POST['date']];
+                $_SESSION['time'] = $time;
+                
+                $duration =$duration[(int) $_POST['duration']];
+                $adults = $_POST['adults'];
+
+                $_SESSION['adults'] = $_POST['adults'];
+                $children = $_POST['children'];
+                $_SESSION['children'] = $_POST['children'];
+                $_SESSION['amount'] ="22000" ;
+                $_SESSION['amount'] = $_POST['amount'];
+                // echo $_SESSION['amount'];
+
+                $amount =  $_SESSION['amount'];
+                // echo "$destination1";
+                $insert_data = "insert into agency.bookinginfo  values('$from','$destination1','$amount','$date','$time','$duration','$adults','$children') ";
+                // $insert_data = "insert into agency.test values('1','$destination1')";
+                $insertQuery = $db->exec($insert_data);
+                ?>
+                                    <script>
+                                        // alert("login Successful !!!");
+                                        // alert("inserted in db");
+                                    </script>
+                                <?php
+
+    }
+    // echo "$from ";
+    // echo "$destination1";
+    // echo "$date";
+    // echo "$time";
+    // echo "$duration";
+    // echo "$adults";
+    // echo "$children";
+    // echo "$amount";
+?>
+    
+
 
 <script>
     
@@ -99,7 +150,7 @@
                         <div class="col-sm-12 ">
                             <label class="form-label-outside">From</label>
                             <div  class="form-wrap form-wrap-inline">
-                            <select  id="source123" onchange="getDates()"  class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="source">';
+                            <select  id="source123" onchange="getDates()"  class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="from">';
                             
                              <option value="all">Choose Source</option> 
                              <!-- <option value="" selected disabled >Choose Source</option> -->
@@ -111,11 +162,14 @@
                         <div class="col-sm-12">
                             <label class="form-label-outside">To</label>
                             <div class="form-wrap form-wrap-inline">
-                            <select  class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="city" disabled>
+                            <!-- <select  class="form-input "  data-minimum-results-for-search="Infinity"  >
                                 
                                 
-                                <option value="3"><?php echo "{$_SESSION['destination']}"; ?></option>
-                            </select>
+                                <option value="3"></option>
+                            </select> -->
+                            <h3  class="form-input"  >
+                                <?php echo "{$_SESSION['destination']}"; ?>
+                            </h3>
                             </div>
                         </div>
                         <!-- <div class="col-sm-12 col-lg-6 re-render"> -->
@@ -125,7 +179,7 @@
                             <!-- Select -->
                             <!-- <input class="form-input" id="dateForm" name="date" type="text" > -->
                             <!-- <label class="form-label" for="dateForm">Choose the date</label> -->
-                            <select id="dates" onchange="getTime()" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="city">
+                            <select id="dates" onchange="getTime()" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="date">
                                 
                                 <!-- <option value="4">4 days</option> -->
                                 <option value="all" >Choose Date</option>
@@ -140,7 +194,7 @@
                         <div class="col-sm-12 col-lg-6">
                             <label class="form-label-outside">Depart Time</label>
                             <div class="form-wrap form-wrap-validation">
-                            <select id="time" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="city" >
+                            <select id="time" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="time" >
                                 
                                 <!-- <option value="4">Choose time</option> -->
                                 <option value="all" >Choose Time</option>
@@ -155,7 +209,7 @@
                             <label class="form-label-outside">Duration</label>
                             <div class="form-wrap form-wrap-validation">
                             <!-- Select 2-->
-                            <select   id="duration" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="city">
+                            <select   id="duration" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="duration">
                             <option value="all">Choose Duration</option>
                                 <!-- <option value="4">4 days</option> -->
                             </select>
@@ -164,23 +218,23 @@
                         <div class="col-lg-6">
                             <label class="form-label-outside">Adults</label>
                             <div class="form-wrap form-wrap-modern">
-                            <input onchange="getAmount()"  class="form-input input-append passangers" id="form-element-stepper" type="number" min="1" max="100" value="1">
+                            <input onchange="getAmount()"  class="form-input input-append passangers" id="form-element-stepper" type="number" min="1" max="100" value="1" name="adults">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <label class="form-label-outside">Children</label>
                             <div class="form-wrap form-wrap-modern">
-                            <input onchange="getAmount()" class="form-input input-append passangers" id="form-element-stepper-1" type="number" min="0" max="100" value="0">
+                            <input onchange="getAmount()" class="form-input input-append passangers" id="form-element-stepper-1" type="number" min="0" max="100" value="0" name="children">
                             </div>
                         </div>
                         </div>
 
                         <div class="col-sm-12 ">
-                            <label class="form-label-outside">Amount</label>
+                            <label class="form-label-outside">Amount(₹)</label>
                             <div class="form-wrap form-wrap-validation">
-                            <h3 id="amount" class="form-input "   name="city" >
-                                    ₹0
-                            </h3>
+                            <input onchange="getAmount()" type="text"  id="amount" class="form-input" name="amount" value="0" readonly>
+                                    
+</input>
                             <!-- <label class="form-label" for="dateForm">Choose the time</label> -->
                             </div>
                         </div>
@@ -448,8 +502,8 @@
                                     var x = document.getElementById("form-element-stepper").max = seats - children ;
                                     var y = document.getElementById("form-element-stepper-1").max = seats - adults;
                                     console.log(document.getElementById("form-element-stepper").max,document.getElementById("form-element-stepper-1").max)
-                                    document.getElementById('amount').innerHTML = "₹"+prices[datesIndex] * passangers;
-                                    
+                                    // document.getElementById('amount').innerHTML = "₹"+prices[datesIndex] * passangers;
+                                    document.getElementById('amount').value = prices[datesIndex] * passangers;
                                     
                                     
                                    

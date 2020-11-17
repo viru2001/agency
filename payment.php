@@ -1,5 +1,6 @@
-
-
+<?php 
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,8 +39,11 @@
           <div class="form-group">
               <label for="PaymentAmount">Payment amount</label>
               <div class="amount-placeholder">
-                  <span>$</span>
-                  <span>500.00</span>
+                  <?php
+                    echo "<span>₹</span>
+                            <span>{$_SESSION['amount']}</span>" ;
+
+                  ?>
               </div>
           </div>
           <div class="form-group">
@@ -72,10 +76,11 @@
                   <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
               </div>
           </div>
-          <button  class="btn btn-block btn-success " id="PayButton" name="submit" type="submit" style="background-color: #ffa900 ;">
+          
+          <a href="acknowledgement.php"  class="btn btn-block btn-success " id="PayButton" name="submit" type="submit" style="background-color: #ffa900 ;">
               <span class="submit-button-lock"></span>
-              <span class="align-middle">Pay $500.00</span>
-          </button>
+              <span class="align-middle"> <?php echo "Pay ₹ {$_SESSION['amount']}";  ?></span>
+          </a>
       </form>
   </div>
 </div>
