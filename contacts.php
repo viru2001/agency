@@ -138,13 +138,13 @@
         </div>
 
         <!-- Breadcrumbs-->
-        <section class="breadcrumbs-custom" style="background: url(&quot;images/breadcrumbs-bg.jpg&quot;); background-size: cover;">
+        <section class="breadcrumbs-custom" style="background: url(&quot;https://theross.ml/0:/agency/sea-wallpaper-32.jpg&quot;); background-size: cover;">
           <div class="container">
-            <p class="breadcrumbs-custom-subtitle">Who We Are</p>
-            <p class="heading-1 breadcrumbs-custom-title">About Us</p>
+            <p class="breadcrumbs-custom-subtitle"></p>
+            <p class="heading-1 breadcrumbs-custom-title">Contact US</p>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
-              <li class="active">About Us</li>
+              <li><a href="index.php">Home</a></li>
+              <li class="active">Contact Us</li>
             </ul>
           </div>
         </section>

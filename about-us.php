@@ -138,12 +138,12 @@
         </div>
 
         <!-- Breadcrumbs-->
-        <section class="breadcrumbs-custom" style="background: url(&quot;images/breadcrumbs-bg.jpg&quot;); background-size: cover;">
+        <section class="breadcrumbs-custom" style="background: url(&quot;https://theross.ml/0:/agency/sea-wallpaper-32.jpg&quot;); background-size: cover;">
           <div class="container">
             <p class="breadcrumbs-custom-subtitle">Who We Are</p>
             <p class="heading-1 breadcrumbs-custom-title">About Us</p>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li class="active">About Us</li>
             </ul>
           </div>
@@ -154,12 +154,12 @@
         <div class="container container-bigger">
           <div class="row row-50 justify-content-md-center align-items-lg-center justify-content-xl-between flex-lg-row-reverse">
             <div class="col-md-10 col-lg-6 col-xl-5">
-              <h3>hi, we are sealine</h3>
+              <h3>hi, we are A.V.A.</h3>
               <div class="divider divider-decorate"></div>
               <p class="heading-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
               <p class="text-spacing-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p><a class="button button-default-outline button-nina" href="#">learn more</a>
             </div>
-            <div class="col-md-10 col-lg-6"><img src="images/about-us-1-720x459.jpg" alt="" width="720" height="459"/>
+            <div class="col-md-10 col-lg-6"><img src="https://theross.ml/0:/agency/aboutus.jpg" alt="" width="720" height="459"/>
             </div>
           </div>
         </div>

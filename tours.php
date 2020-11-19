@@ -138,12 +138,12 @@
         </div>
 
         <!-- Breadcrumbs-->
-        <section class="breadcrumbs-custom" style="background: url(&quot;images/breadcrumbs-bg.jpg&quot;); background-size: cover;">
+        <section class="breadcrumbs-custom" style="background: url(&quot;https://theross.ml/0:/agency/sea-wallpaper-32.jpg&quot;); background-size: cover;">
           <div class="container">
             <p class="breadcrumbs-custom-subtitle"></p>
             <p class="heading-1 breadcrumbs-custom-title">OUR TOURS</p>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.php">Home</a></li>
               <li class="active">Tours</li>
             </ul>
           </div>
@@ -170,15 +170,31 @@
           <div class="row row-50">
           <?php
                 include 'connector.php';
-            
+                // $name = "paris";
+                // $image = "images/landing-private-airlines-01-570x370.jpg";
+                // $price = "25000";
+
+
                 $tourQuery = " select distinct destination,price,pics from agency.tourInfo ";
                 $query = $db->exec($tourQuery);
-
+                // $allData = array();
+                $unique = array();
                 while($row = $db->fetch_array($query)){
                   // print_r($row);
+                  // print '\n';
+                  // array_push($allData,$row);
+                //  if($row['destination'] )
+                // echo $row['destination'].'\n';
+                // echo in_array($row['destination'],$unique).'\n';
+                if (in_array($row['destination'],$unique) == 1){
+                }
+                else{
                   foreach((array)$row as $x => $x_value) {
-                    if($x=="destination"){
+                    
+                    if($x=="destination" ){
                       $destination = $x_value;
+                      array_push($unique,$destination);
+                      // print_r($unique);
                     }
                     elseif($x == "price"){
                         $price = $x_value;
@@ -192,8 +208,8 @@
                     //  $pic = "https://theross.ml/0:/project/p4.jpg";
                     // echo "$pic";
                   }
-                  
-
+                
+                  // print_r($allData);
                   error_reporting(0);
 
                   print '<div class="col-md-6 col-xl-4">
@@ -210,7 +226,7 @@
                     </article>
                   </div>';
                 }
-
+              }
                 // $_SESSION['destination'] = $destination;
 
             ?>
