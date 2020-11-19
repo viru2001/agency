@@ -27,7 +27,35 @@
     
     
   <div class="container">
+
+
+  <?php
+        include 'connector.php';
+        
+        if(isset($_POST['submit'])){
+
+                $_SESSION['test'] = 1;
+                // print_r($_SESSION['availableSeats']);
+                $_SESSION['availableSeats'][$_SESSION['dateIndex']] = $_SESSION['availableSeats'][$_SESSION['dateIndex']] - ($_SESSION['adults']+$_SESSION['children']);
+                // echo $seatsRemain;
+                $finalArray = join(",",$_SESSION['availableSeats']);
+                
+            
+
+            $e = "SET SQL_SAFE_UPDATES = 0";
+            $insertQuery =$db->exec($e);
+            $insertQ =   " update agency.tourinfo set availableSeats = '{$finalArray}'  where source = '{$_SESSION['source']}' and destination = '{$_SESSION['destination']}' ";
+            $insertQuery1 =$db->exec($insertQ);
+            ?>
+                        <script>
+                            // alert("login Successful !!!");
+                            location.replace("acknowledgement.php");
+                        </script>
+                    <?php
+        }
+  ?>
   <div id="Checkout" class="inline">
+      
       <h1>Pay Invoice</h1>
       <div class="card-row">
           <span class="visa"></span>
@@ -77,10 +105,10 @@
               </div>
           </div>
           
-          <a href="acknowledgement.php"  class="btn btn-block btn-success " id="PayButton" name="submit" type="submit" style="background-color: #ffa900 ;">
+          <button class="btn btn-block btn-success " id="PayButton" name="submit" type="submit" style="background-color: #ffa900 ;">
               <span class="submit-button-lock"></span>
               <span class="align-middle"> <?php echo "Pay ₹ {$_SESSION['amount']}";  ?></span>
-          </a>
+          </button>
       </form>
   </div>
 </div>

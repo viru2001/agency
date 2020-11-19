@@ -25,6 +25,8 @@
 
     if(isset($_POST['loginSubmit'])){
         $loginEmail = $_POST['loginEmail'];
+
+        $_SESSION['email'] = $loginEmail;
         $loginPassword = $_POST['loginPassword'];
 
         $email_search = "select * from agency.signup where email = '$loginEmail' ";

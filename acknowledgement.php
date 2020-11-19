@@ -38,6 +38,10 @@
 
 
 <!-- Header -->
+
+<?php
+    echo $_SESSION['test'] ;
+?>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="fullTable" bgcolor="#e1e1e1">
   <tr>
     <td height="20"></td>

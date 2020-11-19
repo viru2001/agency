@@ -67,6 +67,8 @@
     // print_r($dates);
     // print_r($duration);
     // print_r($departure);
+
+    
 ?>
 <?php
 
@@ -85,10 +87,14 @@
                 // echo "$sources";
 
                 $from =$sources[(int)$_POST['from']];
+                $_SESSION['source'] = $from;
+                $_SESSION['dateIndex'] = (int)$_POST['date'];
+                
                 $destination1 = $_SESSION['destination'];
 
                 $finalDates =explode(",", $dates[(int) $_POST['from'] ]);
 
+                
                 $date = $finalDates[(int)$_POST['date']];
 
                 $_SESSION['date'] = $date;
@@ -110,7 +116,7 @@
 
                 $amount =  $_SESSION['amount'];
                 // echo "$destination1";
-                $insert_data = "insert into agency.bookinginfo  values('$from','$destination1','$amount','$date','$time','$duration','$adults','$children') ";
+                $insert_data = "insert into agency.bookinginfo  values('{$_SESSION['email']}','$from','$destination1','$amount','$date','$time','$duration','$adults','$children') ";
                 // $insert_data = "insert into agency.test values('1','$destination1')";
                 $insertQuery = $db->exec($insert_data);
                 ?>
@@ -118,7 +124,9 @@
                                         // alert("login Successful !!!");
                                         // alert("inserted in db");
                                     </script>
-                                <?php
+                <?php
+                $_SESSION['availableSeats'] = explode(",", $availableSeats[(int) $_POST['from'] ]);
+            
 
     }
     // echo "$from ";
@@ -242,6 +250,7 @@
 
                         <div class="form-wrap form-button">
                         <!-- <button class="button button-block button-secondary" name="submit1" type="submit">BOOK TOUR</button> -->
+
                         <button type="submit" name="submit1" class="button button-block button-secondary">BOOK TOUR</button>
                         <!-- <a class="" href="payment.php">
                                 <input type="submit"/>
