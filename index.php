@@ -159,7 +159,8 @@
                     </li>
                     <li><a href="tours.php">Tours</a>
                     </li>
-
+                    <li ><a href="yourTours.php">Your Tours</a>
+                    </li>
                     <?php
                   echo "<li><h5>&nbsp;&nbsp;&nbsp; Welcome, {$_SESSION['username']}</h5></li>";
                     ?>  

@@ -33,7 +33,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">A.V.A. Tours</a>
+    <a class="navbar-brand" href="admin.php">A.V.A. Tours</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,7 +53,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Best Tours</a>
+              <a href="adminBestTours.php">Best Tours</a>
             </li>
             <li>
               <a href="adminAllTours.php">All Tours</a>
@@ -67,10 +67,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Most Visited Hotels</a>
+              <a href="#">Most Visited Hotels</a>
             </li>
             <li>
-              <a href="register.html">All Hotels</a>
+              <a href="#">All Hotels</a>
             </li>
             <!-- <li>
               <a href="forgot-password.html">Forgot Password Page</a>
@@ -192,7 +192,7 @@
               </div> -->
               <!-- <hr class="divider divider-decorate"> -->
             </div>
-            <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">Add Best Tour</a></div>
+            <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="adminAddBestTour.php">Add Best Tour</a></div>
           </div>
           <!-- <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">view all tours</a></div> -->
           <div class="row row-50">
@@ -249,10 +249,10 @@
                         <figure class="event-default-image"><img src="'.$pic.'" alt="" width="570" height="370"/>
                         </figure>
                         <div class="event-default-caption">
-                        <a onclick="getDestination()" id="'.$destination.'"  class="button button-xs button-secondary button-nina " href="tourInfo1.php " >Edit</a >
+                        <a onclick="getDestinationPreview()" id="'.$destination.'"  class="button button-xs button-secondary button-nina " href="adminPreview.php " >Preview</a >
                         &nbsp;&nbsp;
                         
-                        <a type="submit" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton" style="color:#fff;">Delete</a >
+                        <a type="submit" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton" style="color:#fff;">Remove</a >
                        
                         </div>
                       </div>
@@ -274,10 +274,10 @@
 
                             var name = this.id;
                             console.log(name);
-                            $.post("some.php", {"destination": name});
+                            $.post("deleteBest.php", {"destination": name});
                             $.ajax({
                                 type: "POST",
-                                url: "some.php",
+                                url: "deleteBest.php",
                                 // data: { destination: name }
                             }).done(function( msg ) {
                                 // alert( "Data Saved: " + msg );
@@ -304,59 +304,25 @@
                         
                         location.replace("adminBestTours.php");
                 }
-                    
-            </script>
-            <!-- <script>
-              // jQuery(document).ready(function(){ 
-              //   jQuery.post("index.php", {"destination": ""}); 
-			        // }); 
-              
-              function getDestination(){
-                  // alert("called");
-                  // var name = document.getElementsByTagName('a')[0].id;
-                  // document.cookie="destination=name";
-
-                  $(document).on('click', 'button', function () {
+                function getDestinationPreview(){
+              $(document).on('click', 'a', function () {
                     // var destination = this.id;
                     // alert(this.id);
-                    $.post("adminBestTours.php", {"destinationAdmin": this.id});
+                    $.post("adminBestTours.php", {"destination": this.id});
                   });
-                }
+            } 
+            </script>
 
-            </script> -->
+          
+
+        <?php
+              $_SESSION['destination'] = $_POST['destination'];
+        ?>
+           
 
             
-          <?php
-
-                
-                    // $_SESSION['destination'] = "";
-                    // $_POST['destination'] = "";
-
-                    // $_SESSION['destinationAdmin']  = $_POST['destinationAdmin'];
-                      
-
-                    // if(isset($_POST['delete'])){
-                        
-                        ?>
-                        <script>
-                            // alert("clicked Delete !!!");
-                            // location.replace("adminBestTours.php");
-                        </script>
-                        <?php
-                        // $e = "SET SQL_SAFE_UPDATES = 0";
-                        // $DQ =$db->exec($e);
-                        // $deleteQ =   " update agency.tourinfo set type = 'normal'  where  destination = '{$_SESSION['destinationAdmin']}' ";
-                        // $DQuery1 =$db->exec($deleteQ);
-
-
-                        ?>
-                        <script>
-                            // alert("login Successful !!!");
-                            // location.replace("adminBestTours.php");
-                        </script>
-                    <?php
-                    // }
-                    ?>
+          
+                    
             
 
 

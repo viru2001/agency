@@ -57,8 +57,8 @@ class PJBridge {
 		$cmd_s = '';
 
 		foreach ($cmd_a as $tok)
-			$cmd_s .= base64_encode(iconv($this->app_enc, $this->jdbc_enc, $tok)).' ';
-		
+			// $cmd_s .= base64_encode(iconv($this->app_enc, $this->jdbc_enc, $tok)).' ';
+			$cmd_s .= base64_encode(iconv('ASCII//TRANSLIT//IGNORE', 'ASCII//TRANSLIT//IGNORE', $tok)).' ';
 		$cmd_s = substr($cmd_s, 0, -1)."\n";
 
 		fwrite($this->sock, $cmd_s);

@@ -59,6 +59,8 @@
 
                 $_SESSION['username'] = $username;
 
+                
+
                 $pass_decode = password_verify($loginPassword,$db_pass);
 
              if($pass_decode){

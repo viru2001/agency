@@ -33,7 +33,7 @@ session_start();
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-<a class="navbar-brand" href="index.html">A.V.A. Tours</a>
+<a class="navbar-brand" href="admin.php">A.V.A. Tours</a>
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -53,10 +53,10 @@ session_start();
       </a>
       <ul class="sidenav-second-level collapse" id="collapseComponents">
         <li>
-          <a href="navbar.html">Best Tours</a>
+          <a href="adminBestTours.php">Best Tours</a>
         </li>
         <li>
-          <a href="cards.html">All Tours</a>
+          <a href="adminAllTours.php">All Tours</a>
         </li>
       </ul>
     </li>
@@ -67,10 +67,10 @@ session_start();
       </a>
       <ul class="sidenav-second-level collapse" id="collapseExamplePages">
         <li>
-          <a href="login.html">Most Visited Hotels</a>
+          <a href="#">Most Visited Hotels</a>
         </li>
         <li>
-          <a href="register.html">All Hotels</a>
+          <a href="#">All Hotels</a>
         </li>
         <!-- <li>
           <a href="forgot-password.html">Forgot Password Page</a>
@@ -180,7 +180,7 @@ session_start();
     <li class="breadcrumb-item">
       <a href="#">Tours</a>
     </li>
-    <li class="breadcrumb-item active">Best Tours</li>
+    <li class="breadcrumb-item active">All Tours</li>
   </ol>
   <section class="section section-variant-1 bg-default novi-background bg-cover"> 
     <div class="container container-wide">
@@ -192,7 +192,7 @@ session_start();
           </div> -->
           <!-- <hr class="divider divider-decorate"> -->
         </div>
-        <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">Add New Tour</a></div>
+        <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="adminAddTour.php">Add New Tour</a></div>
       </div>
       <!-- <div class="col-xl-3 text-xl-right"><a class="button button-secondary button-nina" href="tours.php">view all tours</a></div> -->
       <div class="row row-50">
@@ -206,7 +206,7 @@ session_start();
             // $price = "25000";
 
 
-            $tourQuery = " select distinct destination,price,pics from agency.tourInfo  ";
+            $tourQuery = " select distinct destination,price,pics,type from agency.tourInfo  ";
             $query = $db->exec($tourQuery);
             // $allData = array();
             $unique = array();
@@ -230,6 +230,16 @@ session_start();
                 elseif($x == "price"){
                     $price = $x_value;
                 }
+                elseif($x == "type"){
+                  $type = $x_value;
+                  if ($type == "best"){
+                    $buttonTxt = "Already in Best Tours";
+                  }
+                  else{
+                    $buttonTxt = "Add to Best Tours";
+                  }
+
+              }
                 else{
                   // $pic = $x_value;
                   $arr = explode(",",$x_value);
@@ -246,14 +256,20 @@ session_start();
               print '<div class="col-md-6 col-xl-4">
                 <article class="event-default-wrap">
                   <div class="event-default">
-                    <figure class="event-default-image"><img src="'.$pic.'" alt="" width="570" height="370"/>
-                    </figure>
-                    <div class="event-default-caption">
-                    <a onclick="getDestination()" id="'.$destination.'"  class="button button-xs button-secondary button-nina " href="tourInfo1.php " >Edit</a >
-                    &nbsp;&nbsp;
-                    
-                    <a type="submit" name="delete" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton  style="color:#fff;"" >Delete</a >
-                   
+                            <figure class="event-default-image"><img src="'.$pic.'" alt="" width="570" height="370"/>
+                            </figure>
+                            <div class="event-default-caption">
+                            
+                            <a onclick="getDestinationPreview()" id="'.$destination.'"  class="button button-xs button-secondary button-nina " href="adminPreview.php " >Preview</a >
+                            &nbsp;&nbsp;
+                            
+                            
+                            <a type="submit" name="delete" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton"  style="color:#fff;">Delete</a >
+                            
+                            <div style="position: absolute; top: 65%;">
+                        
+                            <a type="submit" name="delete" onclick="getDestinationAddBest()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton"  style="color:#fff;">'.$buttonTxt.'</a >
+                            </div>
                     </div>
                   </div>
                   <div class="event-default-inner">
@@ -274,16 +290,16 @@ session_start();
 
                         var name = this.id;
                         console.log(name);
-                        $.post("some1.php", {"destination": name});
+                        $.post("deleteAll.php", {"destination": name});
                         $.ajax({
                             type: "POST",
-                            url: "some1.php",
+                            url: "deleteAll.php",
                             // data: { destination: name }
                         }).done(function( msg ) {
                             // alert( "Data Saved: " + msg );
                         });
                         });
-                        setTimeout(getDestination1, 3000);
+                        setTimeout(getDestination1, 2000);
                         // $.post("some.php", {"destination": name});
                         // });
                         // const getTodo = callback => {
@@ -304,26 +320,52 @@ session_start();
                     
                     location.replace("adminAllTours.php");
             }
-                
-        </script>
-        <!-- <script>
-          // jQuery(document).ready(function(){ 
-          //   jQuery.post("index.php", {"destination": ""}); 
-                // }); 
-          
-          function getDestination(){
-              // alert("called");
-              // var name = document.getElementsByTagName('a')[0].id;
-              // document.cookie="destination=name";
 
-              $(document).on('click', 'button', function () {
-                // var destination = this.id;
-                // alert(this.id);
-                $.post("adminBestTours.php", {"destinationAdmin": this.id});
-              });
+            function getDestinationAddBest(){
+                    $(document).on('click', 'a', function () {
+                        // var name = document.getElementsByClassName('deleteButton')[0].id;
+
+                        var name = this.id;
+                        if(this.innerHTML == "Already in Best Tours"){
+                            alert("This tour is Already added in best Tours");
+                        }
+                        else{
+                        console.log(name);
+                        $.post("addToBest.php", {"destination": name});
+                        $.ajax({
+                            type: "POST",
+                            url: "addToBest.php",
+                            // data: { destination: name }
+                        }).done(function( msg ) {
+                            // alert( "Data Saved: " + msg );
+                        });
+                        setTimeout(getDestination2, 2000);
+                        }});
+                        
+                    
+                    
+
             }
+            
+            function getDestination2(){
+                    
+                    location.replace("adminBestTours.php");
+            }
+         
+            
+            function getDestinationPreview(){
+              $(document).on('click', 'a', function () {
+                    // var destination = this.id;
+                    // alert(this.id);
+                    $.post("adminAllTours.php", {"destination": this.id});
+                  });
+            }
+        </script>
 
-        </script> -->
+        <?php
+              $_SESSION['destination'] = $_POST['destination'];
+        ?>
+        
 
         
       <?php

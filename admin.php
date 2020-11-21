@@ -19,7 +19,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">A.V.A. Tours</a>
+    <a class="navbar-brand" href="admin.php">A.V.A. Tours</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,7 +53,7 @@
               <a href="adminBestTours.php">Best Tours</a>
             </li>
             <li>
-              <a href="cards.html">All Tours</a>
+              <a href="adminAllTOurs.php">All Tours</a>
             </li>
           </ul>
         </li>
@@ -64,10 +64,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Most Visited Hotels</a>
+              <a href="#">Most Visited Hotels</a>
             </li>
             <li>
-              <a href="register.html">All Hotels</a>
+              <a href="#">All Hotels</a>
             </li>
             <!-- <li>
               <a href="forgot-password.html">Forgot Password Page</a>
@@ -186,9 +186,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-comments"></i>
               </div>
-              <div class="mr-5">Best Tours!</div>
+              <div class="mr-5">Best Tours</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="adminBestTours.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -204,7 +204,7 @@
               </div>
               <div class="mr-5">All Tours</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
+            <a class="card-footer text-white clearfix small z-1" href="adminAllTours.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

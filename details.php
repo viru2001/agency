@@ -106,6 +106,7 @@
                 
                 $duration =$duration[(int) $_POST['duration']];
                 $adults = $_POST['adults'];
+                $_SESSION['duration'] = $duration;
 
                 $_SESSION['adults'] = $_POST['adults'];
                 $children = $_POST['children'];
@@ -190,7 +191,7 @@
                             <select id="dates" onchange="getTime()" class="form-input select-filter"  data-minimum-results-for-search="Infinity" name="date">
                                 
                                 <!-- <option value="4">4 days</option> -->
-                                <option value="all" >Choose Date</option>
+                                <option value="all" >MM-DD-YYYY</option>
                                 <!-- <option value="" selected disabled hidden>Choose Dates</option> -->
                             </select>
                             
