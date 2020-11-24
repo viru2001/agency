@@ -131,9 +131,7 @@
                 </ul>
               </div>
               <div class="rd-navbar-top-panel-inner">
-                <!-- <a class="button button-sm button-secondary button-nina" 
-                href="https://www.templatemonster.com/website-templates/62466.html" target="_blank">
-                buy template now</a> -->
+                
                 <!-- <div class="rd-navbar-aside-right"> -->
                   <a class="button button-sm button-secondary button-nina" href="logout.php">LOGOUT</a>
                 <!-- </div> -->
@@ -145,7 +143,7 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a  class="brand-name" href="index.php"><img id="logo" class="logo-default" src="https://theross.ml/0:/agency/logo_small.jpg" alt="" width="100" height="30"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
+                <div class="rd-navbar-brand"><a  class="brand-name" href="index.php"><img id="logo" class="logo-default" src="https://theross.ml/0:/agency/logo_small.jpg" alt="" width="208" height="46"/></a></div>
               </div>
               <div class="rd-navbar-aside-center">
                 <div class="rd-navbar-nav-wrap">
@@ -440,7 +438,7 @@
                         <li><a class="button-tags" href="#">Hotels</a></li>
                       </ul>
                       <ul class="post-blog-meta">
-                        <li><span>by</span>&nbsp;<a href="#">Ronald Chen</a></li>
+                        <li><span>by</span>&nbsp;<a href="#">Vinayak Patil</a></li>
                       </ul>
                     </div>
                     <div class="post-blog-caption-body">
@@ -458,7 +456,7 @@
                         <li><a class="button-tags" href="#">Tips</a></li>
                       </ul>
                       <ul class="post-blog-meta">
-                        <li><span>by</span>&nbsp;<a href="#">Ronald Chen</a></li>
+                        <li><span>by</span>&nbsp;<a href="#">Vinayak Patil</a></li>
                       </ul>
                     </div>
                     <div class="post-blog-caption-body">
@@ -476,7 +474,7 @@
                         <li><a class="button-tags" href="#">Traveling</a></li>
                       </ul>
                       <ul class="post-blog-meta">
-                        <li><span>by</span>&nbsp;<a href="#">Ronald Chen</a></li>
+                        <li><span>by</span>&nbsp;<a href="#">Vinayak Patil</a></li>
                       </ul>
                     </div>
                     <div class="post-blog-caption-body">
@@ -489,7 +487,7 @@
                 </article>
               </div>
             </div>
-            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all blog posts</a></div>
+            <!-- <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all blog posts</a></div> -->
           </div>
         </div>
       </section>
@@ -508,7 +506,7 @@
                   <p>The holiday of a life time - our gulet adventure in the Dodecanese Greek Islands was without a doubt our favourite family trip. The comfort and beauty of the gulet, the incredibly caring crew, the delicious food, the history we learned from our competent and friendly leader, along with the stunning beauty of the islands. Swimming in the most gorgeous coves, kayaking on crystal blue waters, hiking around ruins and into small remote villages and relaxing on the boat... it was the best trip ever. </p>
                 </div>
                 <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Ann McMillan</p>
+                  <p class="quote-boxed-cite">Omkar Jadhav</p>
                   <p class="quote-boxed-small">Regular Customer</p>
                 </div>
               </div>
@@ -521,7 +519,7 @@
                   <p>Peter Sommer runs a a highly professional organization. From his brochure to drop off at the airport to fly home his attention to detail and his consideration for his clients is superb. The archaeologists he uses as guides are erudite but highly personable and have an ability to turn a pile of stones into a recreation of the lives of the people who lived there over two millennia ago. Excellent.</p>
                 </div>
                 <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Debra Ortega</p>
+                  <p class="quote-boxed-cite">Aniket Desai</p>
                   <p class="quote-boxed-small">Regular Customer</p>
                 </div>
               </div>
@@ -534,7 +532,7 @@
                   <p>This was our fourth trip with Peter Sommer Travels and it lived up to our very high expectations. It was a wonderfully organized trip with beautiful cruising and swimming spots, great hikes, and fascinating lectures on the region and history. The ship was beautiful, comfortable, and excellently crewed. The guide was wonderfully informed and participated enthusiastically in all the activities. A shout-out also to the local guides who each brought their own perspective. Excellent</p>
                 </div>
                 <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Samantha Smith</p>
+                  <p class="quote-boxed-cite">Sairaj Patel</p>
                   <p class="quote-boxed-small">Regular Customer</p>
                 </div>
               </div>
@@ -558,10 +556,7 @@
           </div>
         </div>
       </section>
-      <!-- <a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" 
-      style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x,
-       url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, 
-       images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a> -->
+      
 
       <!-- Footer Minimal-->
       <footer class="section page-footer page-footer-minimal novi-background bg-cover text-center bg-gray-darker">

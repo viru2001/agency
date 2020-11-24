@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <link rel="icon" href="https://theross.ml/0:/agency/logo_small.jpg" type="image/x-icon">
   <meta name="author" content=""><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap4.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
@@ -26,7 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
+          <a class="nav-link" href="admin.php">
           <i class="fas fa-tachometer-alt"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -159,11 +160,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Viresh</a>
+          <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Admin</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="logout.php">
           <i class="fas fa-sign-out-alt"></i>Logout</a>
         </li>
       </ul>
@@ -262,7 +263,7 @@
   <footer class="sticky-footer">
     <div class="container">
       <div class="text-center">
-        <small>Copyright © Your Website 2018</small>
+        <small>All Rights Reserved. A.V.A Tours</small>
       </div>
     </div>
   </footer>

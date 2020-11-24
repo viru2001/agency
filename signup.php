@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" href="https://theross.ml/0:/agency/logo_small.jpg" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
@@ -20,6 +20,116 @@
 </head>
   <body>
       
+  <?php
+
+//index.php
+
+//Include Configuration File
+include('config.php');
+
+$login_button = '';
+
+
+if(isset($_GET["code"]))
+{
+
+ $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+
+
+ if(!isset($token['error']))
+ {
+ 
+  $google_client->setAccessToken($token['access_token']);
+
+ 
+  $_SESSION['access_token'] = $token['access_token'];
+
+
+  $google_service = new Google_Service_Oauth2($google_client);
+
+ 
+  $data = $google_service->userinfo->get();
+
+ 
+  if(!empty($data['given_name']))
+  {
+   $_SESSION['username'] = $data['given_name'];
+  }
+
+  if(!empty($data['family_name']))
+  {
+   $_SESSION['user_last_name'] = $data['family_name'];
+  }
+
+  if(!empty($data['email']))
+  {
+   $_SESSION['email'] = $data['email'];
+  }
+
+  if(!empty($data['gender']))
+  {
+   $_SESSION['user_gender'] = $data['gender'];
+  }
+
+  if(!empty($data['picture']))
+  {
+   $_SESSION['user_image'] = $data['picture'];
+  }
+ }
+}
+
+
+if(!isset($_SESSION['access_token']))
+{
+
+//  $login_button = '<a href="'.$google_client->createAuthUrl().'">Login With Google</a>';
+ $login_button = '<button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i><a href="'.$google_client->createAuthUrl().'"> Continue with google</a></button>';
+}
+
+?>
+<!-- <html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>PHP Login using Google Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ 
+ </head>
+ <body>
+  <div class="container">
+   <br />
+   <h2 align="center">PHP Login using Google Account</h2>
+   <br />
+   <div class="panel panel-default">
+   <?php
+//    if($login_button == '')
+//    {
+//     echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
+//     echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
+//     echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
+//     echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
+//     echo '<h3><a href="logout.php">Logout</h3></div>';
+//    }
+//    else
+//    {
+//     echo '<div align="center">'.$login_button . '</div>';
+//    }
+   ?>
+   </div>
+  </div>
+ </body>
+</html> -->
+
+
+
+
+
+
+
 <?php
     include 'connector.php';
 
@@ -65,13 +175,22 @@
 
              if($pass_decode){
                 // if($db_pass){
+                    if($loginEmail == "admin@gmail.com"){
+                        ?>
+                        <script>
+                            // alert("login Successful !!!");
+                            location.replace("admin.php");
+                        </script>
+                    <?php 
+                    }
+                    else{
                     ?>
                         <script>
                             // alert("login Successful !!!");
                             location.replace("index.php");
                         </script>
                     <?php 
-                    
+                    }
                 }
                 else{
                     ?>
@@ -110,9 +229,19 @@
                 <button type="submit" name="loginSubmit" class="btn login">login</button>
                 <!-- <p><a href="javascript:void(0)">Forgotten account</a></p> -->
                 <hr/>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> sign in with google</button>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> sign in with linkedin</button>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> sign in with microsoft</button>
+    <?php
+                if($login_button == '')
+                {
+                    header('location:index.php');
+                }
+                else
+                {
+                    echo $login_button ;
+                }
+         ?>
+                <!-- <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i><a href=""> Continue with google</a></button> -->
+                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>Continue with linkedin</button>
+                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> Continue with microsoft</button>
             </form>
         </div>
     
@@ -165,7 +294,7 @@
 
                     ?>
                         <script>
-                            alert("Inserted Succesfully !!!");
+                            // alert("Inserted Succesfully !!!");
                         </script>
                     <?php 
                     
@@ -173,7 +302,7 @@
                 else{
                     ?>
                         <script>
-                            alert("Insertion Failed !!!");
+                            // alert("Insertion Failed !!!");
                         </script>
                     <?php
                 }
@@ -204,9 +333,9 @@
                 <button type="submit" name="submit" class="btn signup">create account</button>
                 <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
                 <hr/>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> sign up with google</button>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> sign up with linkedin</button>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> sign up with microsoft</button>
+                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> Continue With google</button>
+                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> Continue With linkedin</button>
+                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-windows fa-lg" aria-hidden="true"></i> Continue With microsoft</button>
             </form>
         </div>
         <script src="js1/signup1.js"></script>

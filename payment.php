@@ -8,7 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon" href="https://theross.ml/0:/agency/logo_small.jpg" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
@@ -68,9 +68,9 @@
               <label for="PaymentAmount">Payment amount</label>
               <div class="amount-placeholder">
                   <?php
+                    // echo "₹".($_SESSION['amount'] + $_SESSION['amount']*0.18);
                     echo "<span>₹</span>
-                            <span>{$_SESSION['amount']}</span>" ;
-
+                            <span>".($_SESSION['amount'])." + 18% GST</span>" ;
                   ?>
               </div>
           </div>
@@ -107,7 +107,7 @@
           
           <button class="btn btn-block btn-success " id="PayButton" name="submit" type="submit" style="background-color: #ffa900 ;">
               <span class="submit-button-lock"></span>
-              <span class="align-middle"> <?php echo "Pay ₹ {$_SESSION['amount']}";  ?></span>
+              <span class="align-middle"> <?php echo "Pay  ₹".($_SESSION['amount'] + $_SESSION['amount']*0.18);?></span>
           </button>
       </form>
   </div>

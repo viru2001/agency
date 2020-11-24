@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  
+  <link rel="icon" href="https://theross.ml/0:/agency/logo_small.jpg" type="image/x-icon">
   <meta name="author" content=""><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap4.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
@@ -162,7 +162,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Viresh</a>
+          <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Admin</a>
         </li>
         
         <li class="nav-item">
@@ -252,7 +252,7 @@
                         <a onclick="getDestinationPreview()" id="'.$destination.'"  class="button button-xs button-secondary button-nina " href="adminPreview.php " >Preview</a >
                         &nbsp;&nbsp;
                         
-                        <a type="submit" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton" style="color:#fff;">Remove</a >
+                        <a type="submit" onclick="getDestination()" id="'.$destination.'" class="button button-xs button-secondary button-nina deleteButton" style="color:#fff;">Remove From Best</a >
                        
                         </div>
                       </div>
@@ -316,6 +316,7 @@
           
 
         <?php
+          error_reporting(0);
               $_SESSION['destination'] = $_POST['destination'];
         ?>
            
@@ -340,7 +341,7 @@
   <footer class="sticky-footer">
     <div class="container">
       <div class="text-center">
-        <small>Copyright © Your Website 2018</small>
+        <small>All Rights Reserved. A.V.A Tours</small>
       </div>
     </div>
   </footer>
